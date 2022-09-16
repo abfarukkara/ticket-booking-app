@@ -12,11 +12,11 @@ class BottomBar extends StatefulWidget {
 class _BottomBarState extends State<BottomBar> {
   var _selectedIndex = 0;
 
-  static final _widgetOptions = <Widget>[
-    const HomeScreen(),
-    const Text('Search'),
-    const Text('Tickets'),
-    const Text('Profile'),
+  static const _widgetOptions = <Widget>[
+    HomeScreen(),
+    Text('Search'),
+    Text('Tickets'),
+    Text('Profile'),
   ];
 
   void _onItemTapped(int index) {
