@@ -1,7 +1,9 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:ticketbookingapp/screens/hotel_screen.dart';
 import 'package:ticketbookingapp/screens/ticket_view.dart';
+import 'package:ticketbookingapp/utils/app_info_list.dart';
 
 import '../utils/app_styles.dart';
 
@@ -12,6 +14,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(
+        physics: const BouncingScrollPhysics(),
         children: [
           const Gap(40),
           Padding(
@@ -97,8 +100,9 @@ class HomeScreen extends StatelessWidget {
                   child: PageView(
                     physics: const BouncingScrollPhysics(),
                     padEnds: false,
-                    controller: PageController(viewportFraction: 0.90),
+                    controller: PageController(viewportFraction: 0.9),
                     children: const [
+                      TicketView(),
                       TicketView(),
                       TicketView(),
                     ],
@@ -123,9 +127,19 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ],
                 ),
+                const Gap(15),
               ],
             ),
-          )
+          ),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            padding: const EdgeInsets.only(left: 20),
+            physics: const BouncingScrollPhysics(),
+            child: Row(
+              children:
+                  hotelList.map((hotel) => HotelScreen(hotel: hotel)).toList(),
+            ),
+          ),
         ],
       ),
     );

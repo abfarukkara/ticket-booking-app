@@ -7,6 +7,7 @@ class Styles {
   static const textColor = Color(0xFF3b3b3b);
   static const bgColor = Color(0xFFeeedf2);
   static const orangeColor = Color(0xFFF37B67);
+  static const kakiColor = Color(0xFFd2bdb6);
 
   static const textStyle = TextStyle(
     fontSize: 16,
@@ -21,7 +22,7 @@ class Styles {
   );
 
   static const headlineStyle2 = TextStyle(
-    fontSize: 17,
+    fontSize: 21,
     color: textColor,
     fontWeight: FontWeight.bold,
   );
